@@ -11,6 +11,10 @@ npm run dev
 
 Open the local address printed by Vite. Use `npm run build` to create the production site in `dist`, and `npm run preview` to preview it.
 
+## GitHub Pages
+
+The `.github/workflows/deploy.yml` workflow builds and deploys pushes to `main`. In repository Settings → Pages, choose **GitHub Actions** as the source. The workflow takes the base path from GitHub Pages, so both repository sites and username sites work, including document downloads. The workflow can also be started manually from the Actions tab.
+
 ## Content
 
 Project names, roles, URLs, experience, skills, education, and contact information come from `Anurag_Tamrakar.docx` and `Anurag_Tamrakar_Portfolio.pdf`. Edit `src/data.js` to update projects, skills, or employment history; edit `src/App.vue` for biography and contact details. The project artwork is an original typographic index, rather than screenshots of client websites. In-progress projects retain their documented status.
