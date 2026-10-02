@@ -6,4 +6,5 @@ const deploymentBase = process.env.VITE_BASE_PATH || '/'
 export default defineConfig({
   plugins: [vue()],
   base: deploymentBase.endsWith('/') ? deploymentBase : `${deploymentBase}/`,
+  build: { target: 'es2018' },
 })

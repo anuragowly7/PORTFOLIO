@@ -9,7 +9,37 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232e48e8'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-size='32' font-weight='700' fill='white'%3Eat%3C/text%3E%3C/svg%3E" />
   </head>
   <body>
-    <div id="app"></div>
+    <style>
+      body{margin:0;background:#111115;color:#f1f0f7}
+      .startup-portfolio{box-sizing:border-box;max-width:1080px;margin:0 auto;padding:48px 24px;font-family:Arial,sans-serif;line-height:1.7}
+      .startup-portfolio a{color:#d5f582;text-underline-offset:5px}
+      .startup-portfolio nav{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-bottom:1px solid #ffffff20;padding-bottom:24px}
+      .startup-portfolio h1{font-size:clamp(36px,7vw,72px);line-height:1.1;letter-spacing:-2px;margin:64px 0 24px}
+      .startup-portfolio h1 span{color:#c2a2ff}
+      .startup-portfolio p{max-width:620px;color:#bcb7cc}
+      .startup-links{display:flex;gap:20px;flex-wrap:wrap;margin:28px 0 56px}
+      .startup-projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px}
+      .startup-projects a{display:block;padding:24px;border:1px solid #ffffff20;border-radius:12px;background:#1b1b22;text-decoration:none}
+      .startup-projects small{display:block;color:#bcb7cc;margin-top:8px}
+      .startup-portfolio footer{margin-top:48px;border-top:1px solid #ffffff20;padding-top:24px;overflow-wrap:anywhere}
+    </style>
+    <div id="app">
+      <main class="startup-portfolio">
+        <nav aria-label="Portfolio navigation"><strong>Anurag Tamrakar</strong><a href="mailto:anuragtamrakar4@gmail.com">Let’s talk ↗</a></nav>
+        <h1>Design that connects.<br><span>Code that delivers.</span></h1>
+        <p>UI/UX & Frontend Engineer in Fort Worth, Texas, with 5+ years of experience creating accessible, responsive digital experiences.</p>
+        <div class="startup-links"><a href="./Anurag_Tamrakar.docx" download>Download CV ↓</a><a href="./Anurag_Tamrakar_Portfolio.pdf" download>Download portfolio ↓</a><a href="https://www.linkedin.com/in/anurag-tamrakar-630b8b137/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+        <h2>Selected work</h2>
+        <div class="startup-projects">
+          <a href="https://www.desmata.com/" target="_blank" rel="noopener noreferrer">Desmata ↗<small>UI/UX</small></a>
+          <a href="https://ce-construction.com" target="_blank" rel="noopener noreferrer">CE Construction ↗<small>UI/UX & Development</small></a>
+          <a href="https://www.tamrakarparalegalservices.com/" target="_blank" rel="noopener noreferrer">Tamrakar Paralegal Services ↗<small>Full Stack</small></a>
+          <a href="https://psmau.com.au/" target="_blank" rel="noopener noreferrer">PSM Australia ↗<small>UI/UX / Web Design</small></a>
+        </div>
+        <noscript><p>JavaScript is disabled. Project links, downloads, and contact details remain available here.</p></noscript>
+        <footer><a href="mailto:anuragtamrakar4@gmail.com">anuragtamrakar4@gmail.com</a></footer>
+      </main>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

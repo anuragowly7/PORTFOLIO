@@ -41,25 +41,31 @@ async function copyEmail() {
 onMounted(() => {
   motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
   navigationQuery = window.matchMedia('(min-width: 901px)')
-  navigationQuery.addEventListener('change', syncNavigation)
+  if (navigationQuery.addEventListener) navigationQuery.addEventListener('change', syncNavigation)
+  else navigationQuery.addListener(syncNavigation)
   syncMotionPreference()
   syncVisibility()
   try { motionPaused.value = localStorage.getItem('portfolio-motion-paused') === 'true' } catch {}
-  motionQuery.addEventListener('change', syncMotionPreference)
+  if (motionQuery.addEventListener) motionQuery.addEventListener('change', syncMotionPreference)
+  else motionQuery.addListener(syncMotionPreference)
   document.addEventListener('visibilitychange', syncVisibility)
   document.addEventListener('keydown', handleKey)
   document.addEventListener('click', handleOutsideClick)
-  if (!reducedMotion.value) {
+  if (!reducedMotion.value && 'IntersectionObserver' in window) {
     observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target) } }), { threshold: 0.08 })
     document.querySelectorAll('.reveal').forEach(el => { el.classList.add('will-reveal'); observer.observe(el) })
   }
-  sectionObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) activeSection.value = entry.target.id }), { rootMargin: '-105px 0px -50% 0px' })
-  document.querySelectorAll('main > section[id]').forEach(el => sectionObserver.observe(el))
+  if ('IntersectionObserver' in window) {
+    sectionObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) activeSection.value = entry.target.id }), { rootMargin: '-105px 0px -50% 0px' })
+    document.querySelectorAll('main > section[id]').forEach(el => sectionObserver.observe(el))
+  }
 })
 onUnmounted(() => {
   observer?.disconnect(); sectionObserver?.disconnect(); clearTimeout(copyTimer)
-  motionQuery?.removeEventListener('change', syncMotionPreference)
-  navigationQuery?.removeEventListener('change', syncNavigation)
+  if (motionQuery?.removeEventListener) motionQuery.removeEventListener('change', syncMotionPreference)
+  else motionQuery?.removeListener(syncMotionPreference)
+  if (navigationQuery?.removeEventListener) navigationQuery.removeEventListener('change', syncNavigation)
+  else navigationQuery?.removeListener(syncNavigation)
   document.removeEventListener('visibilitychange', syncVisibility)
   document.removeEventListener('keydown', handleKey)
   document.removeEventListener('click', handleOutsideClick)
