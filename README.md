@@ -17,7 +17,7 @@ The `.github/workflows/deploy.yml` workflow builds and deploys pushes to `main`.
 
 ## Content
 
-Project names, roles, URLs, experience, skills, education, and contact information come from `Anurag_Tamrakar.docx` and `Anurag_Tamrakar_Portfolio.pdf`. Edit `src/data.js` to update projects, skills, or employment history; edit `src/App.vue` for biography and contact details. The project artwork is an original typographic index, rather than screenshots of client websites. In-progress projects retain their documented status.
+Project names, roles, URLs, experience, skills, education, and contact information come from Anurag_Tamrakar. Edit `src/data.js` to update projects, skills, or employment history; edit `src/App.vue` for biography and contact details. The project artwork is an original typographic index, rather than screenshots of client websites. In-progress projects retain their documented status.
 
 The original documents are served from `public` for download. The résumé includes professional reference contact details; replace that download with a public-facing résumé if desired.
 
